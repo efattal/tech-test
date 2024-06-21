@@ -16,7 +16,7 @@ const propagateColor = async (cube, color, queue) => {
     // Line below does not refresh the view
     // Cubes.update(_id, {$set: {color}})
     // Workaround
-    Cubes.remove(cube._id)
+    Cubes.remove(_id)
     Cubes.insert({ ...cube, color })
     
 
