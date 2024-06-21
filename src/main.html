@@ -18,16 +18,21 @@
            <plane center='0,0,-0.5' size="50 50"></plane>
          </shape>
        </transform>
-
-       <!-- Cube -->
-       <transform translation="0 0 0">
-         <shape>
-           <appearance>
-             <material diffuseColor="1 0 0"></material>
-           </appearance>
-           <box size="1 1 1"></box>
-         </shape>
-       </transform>
+       <!-- Cubes -->
+       {{#each cubes}}
+         {{> cube}}
+       {{/each}}
     </scene>
   </x3d>
+</template>
+
+<template name="cube">
+  <transform translation="{{x}} {{y}} 0">
+    <shape>
+      <appearance>
+        <material diffuseColor="{{color.r}} {{color.g}} {{color.b}}"></material>
+      </appearance>
+      <box size="1 1 1"></box>
+    </shape>
+  </transform>
 </template>
